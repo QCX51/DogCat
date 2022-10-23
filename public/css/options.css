@@ -1,0 +1,137 @@
+:root {
+    --circle-size:300px;
+    --circle-min-size:200px;
+    --circle-two-size:280px;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+button {
+    width: 100%;
+    height: 100%;
+    border-radius: 360px;
+    border: none;
+    background: transparent;
+}
+  
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--circle-size), 1fr));
+    gap: 50px;
+    min-height: 100vh;
+    background-image: url(../assets/options-bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    color: white;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: center;
+}
+.right {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    flex-direction: column;
+}
+.options {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+}
+.options-container {
+    height: var(--circle-size);
+    width: var(--circle-size);
+}
+.circle-1 {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    border-radius: 360px;
+    z-index: 12;
+}
+.circle-2 {
+    display:flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 360px;
+    margin-top: -40px;
+    background-color: rgb(75, 27, 0);
+    padding: 20px;
+}
+.circle-bg-1 {
+    height: 100%;
+    width: 100%;
+    border-radius: 360px;
+    background-image: url(../assets/tl.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.circle-3 {
+    display:flex;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 360px;
+    background-color: rgb(75, 27, 0);
+}
+.circle-4 {
+    display:flex;
+    align-items: center;
+    align-content: center;
+    height: 95%;
+    width: 95%;
+    border-radius: 360px;
+    background-color: orange;
+    padding: 20px;
+}
+.circle-bg-2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 360px;
+    background-image: url(../assets/option_cat.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+@media (max-width: 650px) {
+    .left {
+        align-items: center;
+    }
+    .right {
+        align-items: center;
+    }
+    .options-container {
+        height: var(--circle-min-size);
+        width: var(--circle-min-size);
+    }
+    .container {
+        gap: 10px;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+    }
+}
+.dog {
+    background-color: pink;
+}
