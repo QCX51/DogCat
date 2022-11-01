@@ -1,0 +1,255 @@
+:root {
+  --circle-size: 300px;
+  --circle-min-size: 180px;
+  --circle-two-size: 280px;
+
+  --navbar-size: 64px;
+  --navbar-logo-size: 44px;
+  --navbar-title-font-size: 24px;
+  --navbar-back-button-width: 100px;
+  --navbar-back-button-height: 26px;
+
+  --primary-color-1: #392213;
+  --primary-color-2: #9e724e;
+  --primary-color-3: #ffa515;
+  --primary-color-4: #ff0000;
+  --primary-color-5: #fff3b5;
+  --primary-color-6: #cccccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 64px;
+  background: var(--primary-color-3);
+  color: #f9f9f9;
+}
+
+#image-right {
+  background-image: url(../assets/icon-dogcat.webp);
+  background-size: 256px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 64px;
+  width: 256px;
+}
+
+.navbar-cont {
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  height: 64px;
+}
+
+.navbar-burger {
+  height: 45px;
+  width: 45px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  background-image: url(../assets/burger.webp);
+  background-size: 45px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar-logo {
+  width: var(--navbar-logo-size);
+  height: var(--navbar-logo-size);
+  background-image: url(../assets/logo.webp);
+  background-size: var(--navbar-logo-size);
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 0 0 16px;
+  }
+}
+
+.navbar-menu>button {
+  background: transparent;
+  border: none;
+}
+
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color-2);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+body.open .navbar-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-overlay {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-burger {
+    display: none;
+  }
+}
+
+.navbar-title {
+  display: inline;
+  margin: 0;
+  font-size: 24px;
+  color: black;
+  font-weight: bolder;
+  margin-left: 5px;
+}
+
+.navbar-menu {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  translate: -100% 0;
+  width: 270px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--primary-color-3);
+  visibility: hidden;
+  transition: translate 0.3s;
+}
+
+body.open .navbar-menu {
+  translate: 0 0;
+  visibility: visible;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-menu {
+    position: static;
+    translate: 0 0;
+    width: auto;
+    background: transparent;
+    flex-direction: row;
+    visibility: visible;
+  }
+}
+
+body.open .navbar-menu>button {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  padding: 0 0px;
+  height: 40px;
+  width: 100%;
+  text-align: left;
+}
+
+#button-add,
+#button-back {
+  cursor: pointer;
+}
+
+#button-add {
+  font-weight: bolder;
+  color: white;
+  background: red;
+  border-radius: 5px;
+  height: 24px;
+  line-height: 24px;
+  min-width: 110px;
+  max-width: 110px;
+}
+
+#button-back {
+  font-weight: bolder;
+  color: white;
+  background: black;
+  border-radius: 5px;
+  height: 24px;
+  width: 80px;
+  line-height: 24px;
+  min-width: 80px;
+}
+
+body {
+  color: brown;
+  background-color: white;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 1);
+  margin-top: 64px;
+}
+
+.container:before {
+  content: "";
+  position: absolute;
+  left: -150%;
+  top: 0;
+  width: 300%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  transform: rotate(0deg);
+  z-index: -1;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0px auto 0px auto;
+  border-right: 1px solid rgba(0, 0, 0, 0.20);
+  caption-side: top;
+  width: 100%;
+  height: 100%;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 4px;
+}
+
+th {
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  border-style: inset;
+  background-color: white;
+  color: black;
+}
+
+td {
+  border-left: 1px solid rgba(0, 0, 0, 0.20);
+  background-color: white;
+  color: black;
+}
+
+caption {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 5px;
+}

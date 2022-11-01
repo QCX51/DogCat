@@ -1,9 +1,8 @@
-
 const toggleMenuOpen = () => document.body.classList.toggle("open");
 // ######## OAuth API
 hello.init({
     facebook: "605612360973350",
-    google: "356071974542-nhofhsmc0f9oavuhqvo94e3h15n6a08e.apps.googleusercontent.com"
+    google: "679313092033-2j8qabl5e3dt2agp8c1aso4a736ghsos.apps.googleusercontent.com"
 },
 {
     redirect_uri: "https://dog-cat-7b3a6.web.app/"
@@ -14,6 +13,7 @@ hello.on("auth.login", function(auth)
     // Call user information, for the given network
     hello(auth.network).api("me").then(function(p)
     {
+        alert("Hola" + p.first_name);
         // p.first_name,
         // p.last_name,
         // p.email,
