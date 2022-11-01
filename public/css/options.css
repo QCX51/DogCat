@@ -21,10 +21,17 @@
     box-sizing: border-box;
 }
 
+@font-face
+{
+	font-family: "League Spartan";
+	src: url(../fonts/League_Spartan/static/LeagueSpartan-Regular.ttf);
+}
+
 body {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    font-family: "League Spartan";
     background-image: url(../assets/options-bg.jpeg);
     background-repeat: no-repeat;
     background-size: cover;

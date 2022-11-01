@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
 }
+@font-face
+{
+	font-family: "League Spartan";
+	src: url(../fonts/League_Spartan/static/LeagueSpartan-Regular.ttf);
+}
 .navbar-logo {
     display: flex;
     height: 50px;
@@ -160,6 +165,7 @@ body {
     background-color: white;
     overflow-y: hidden;
     overflow-x: hidden;
+    font-family: "League Spartan";
     background-image: url(../assets/2.jpg);
   }
   

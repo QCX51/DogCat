@@ -17,6 +17,12 @@
   --primary-color-6: #cccccc;
 }
 
+@font-face
+{
+	font-family: "League Spartan";
+	src: url(../fonts/League_Spartan/static/LeagueSpartan-Regular.ttf);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -194,6 +200,7 @@ body.open .navbar-menu>button {
 }
 
 body {
+  font-family: "League Spartan";
   color: brown;
   background-color: white;
   overflow: hidden;
@@ -239,6 +246,7 @@ th {
   border-style: inset;
   background-color: white;
   color: black;
+  font-weight: normal;
 }
 
 td {
@@ -248,6 +256,7 @@ td {
 }
 
 caption {
+  color: black;
   text-align: left;
   font-size: 16px;
   font-weight: bold;
