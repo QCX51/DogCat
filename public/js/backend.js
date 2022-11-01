@@ -104,3 +104,4 @@ function uploadFile(file) {
   // Cancel the upload
   //uploadTask.cancel();
 }
+
