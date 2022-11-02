@@ -123,3 +123,4 @@ function select(kind) {
         window.location.href = "Catalogo_cats.html";
     }
 }
+
