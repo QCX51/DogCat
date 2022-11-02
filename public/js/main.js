@@ -1,4 +1,4 @@
-// ######## OAuth API
+
 hello.init({
     facebook: "605612360973350",
     google: "679313092033-2j8qabl5e3dt2agp8c1aso4a736ghsos.apps.googleusercontent.com",
