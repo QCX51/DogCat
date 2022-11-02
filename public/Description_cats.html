@@ -5,9 +5,10 @@
     <title>Descripción mascota</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cat_dogs.css" />
+    <script type="text/javascript" src="js/backend.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+    <script type="text/javascript" src="js/main.js"></script>
 
 <body>
 <nav class="navbar">
@@ -17,16 +18,13 @@
 </button>
 <button class="button_again">VOLVER</button>
 <nav class="navbar-menu" style="padding: 10px;">
-<button class="button_adopcion" >ADOPTA UN PERRO</button>
-<button class="button_adopcion">ADOPTA UN GATO</button>
+<button type="button" class="button_adopcion" onclick="select('dogs')">ADOPTA UN PERRO</button>
+<button class="button_adopcion" onclick="select('cats')">ADOPTA UN GATO</button>
 </nav>
 </nav>
-
-
 
 <div class="container" style="min-height: 80vh;" >
 <h1 id="title_dogs" style="text-align: center; padding: 65px 0px 30px 0px;  color: black;">Detalles de adopción</h1>
-
 
 <div class="foto-mascota">
     <div class="foto-adopcion">
