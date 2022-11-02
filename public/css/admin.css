@@ -226,6 +226,34 @@ body {
   z-index: -1;
 }
 
+.action-edit, .action-delete {
+  display: block;
+  color: white;
+}
+
+.action-edit {
+  border: none;
+  background-color:var(--primary-color-2);
+  width: 100px;
+  height: 25px;
+  margin: 2px;
+}
+
+.action-delete {
+  border: none;
+  background-color:var(--primary-color-4);
+  width: 100px;
+  height: 25px;
+  margin: 2px;
+}
+
+span.icon {
+  background: url(../assets/icono_editar.webp) no-repeat;
+  float: left;
+  width: 20px;
+  height: 20px;
+}
+
 table {
   border-collapse: collapse;
   margin: 0px auto 0px auto;

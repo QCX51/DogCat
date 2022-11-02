@@ -13,7 +13,7 @@ hello.on("auth.login", function(auth)
     // Call user information, for the given network
     hello(auth.network).api("me").then(function(p)
     {
-        alert("Hola" + p.first_name);
+        window.location.href = "options.html";
         // p.first_name,
         // p.last_name,
         // p.email,
@@ -26,7 +26,7 @@ const logout = function()
 {
     hello("google").logout().then(function()
     {
-        window.location.href = "/";
+        window.location.href = "index.html";
     }, function(e)
     {
         console.log("logout error: " + e.error.message);
