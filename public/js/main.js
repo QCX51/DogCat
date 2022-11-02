@@ -116,5 +116,10 @@ function validateEmail(email)
 }
 
 function select(kind) {
-    console.log(kind);
+    if (kind == "dogs") {
+        window.location.href = "Catalogo_dogs.html";
+    }
+    else {
+        window.location.href = "Catalogo_cats.html";
+    }
 }
