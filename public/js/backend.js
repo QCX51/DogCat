@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
 import { getStorage, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js"
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, doc } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, onSnapshot, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -43,33 +43,58 @@ export async function addNewAmimal() {
   try {
     const docRef = await addDoc(collection(db, "mascotas"), object);
     console.log("Document written with ID: ", docRef.id);
+    alert("Mascota agregada correctamente");
   } catch (e) {
     console.error("Error adding document: ", e);
+    alert("Ocurrio un error.");
   }
 }
 
 window.addnew = addNewAmimal;
 
 const querySnapshot = await getDocs(collection(db, "mascotas"));
-querySnapshot.forEach((doc) => {
+querySnapshot.forEach((d) => {
   // doc.data() is never undefined for query doc snapshots
-  console.log(doc.id, " => ", doc.data());
+  // console.log(doc.id, " => ", doc.data());
   let tab;
 tab = document.getElementById('tabs');
 tab.innerHTML += `
     <tr>
-    <td>${doc.id}</td>
-    <td>${doc.data().Nombre}</td>
-    <td>${doc.data().Talla}</td>
-    <td>${doc.data().Edad}</td>
-    <td>${doc.data().Color}</td>
-    <td>${doc.data().Sexo}</td>
-    <td>${doc.data().Imagen}</td>
-    <td>${doc.data().Descripcion}</td>
-    <td>${doc.data().Razon}</td>
-    <td>actions</td>
+    <td>${d.id}</td>
+    <td>${d.data().Nombre}</td>
+    <td>${d.data().Talla}</td>
+    <td>${d.data().Edad}</td>
+    <td>${d.data().Color}</td>
+    <td>${d.data().Sexo}</td>
+    <td>${d.data().Imagen}</td>
+    <td>${d.data().Descripcion}</td>
+    <td>${d.data().Razon}</td>
+    <td>
+    <button data-id="${d.id}" class="action-edit"><span class="icon-edit"></span>Editar</button>
+    <button data-id="${d.id}" class="action-delete"><span class="icon-delete"></span>Eliminar</button>
+    </td>
     </tr>
     `;
+
+    const btns = document.querySelectorAll('.action-delete');
+const btn_update = document.querySelectorAll('.action-edit');
+btns.forEach(btn =>
+{
+btn.addEventListener('click', (e) => {
+  const docRef = doc(db, "mascotas", e.target.getAttribute('data-id'));
+
+deleteDoc(docRef)
+.then(() => {
+  alert("Elemento borrado!");
+    console.log("Entire Document has been deleted successfully.")
+})
+.catch(error => {
+    console.log(error);
+})
+});
+});
+
+
 });
 
 export function uploadFile(file) {
