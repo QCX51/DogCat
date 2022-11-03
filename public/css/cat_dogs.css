@@ -1,42 +1,98 @@
 
-/*CSS barra de navegacion*/
-.separator{
-    width: 95%;
-    background-color: black;
-    height: 1px;
-    margin-top: 15px;
-    margin-right: 39px;
+/*CSS barra de navegacion de las paginas de catalogo de perros y gatos*/
+@font-face
+{
+	font-family: "League Spartan";
+	src: url(../fonts/League_Spartan/static/LeagueSpartan-Regular.ttf);
+}
+
+.img_amigo{
+    
+        height: 62px;
+        margin-left: 16px;
+    
+}
+.text_amigo{
+    
+       
+        font-family: 'League Spartan';
+        font-size: 19px;
+        font-weight: 400;
+        color: black;
+        position: fixed;
+        margin-left: 75px;
+    
+    
 }
 
 button.button_again:hover, button.button_adopcion:hover{
     background-color: black!important;
+
+
 }
-.button_again{
-    background-color: #332213;
+.navbar-menu > .button_again2{
+    font-family: "League Spartan";
+    color: white;
+    background-color: black;
+    height: 40px;
+    width: 120px;
+    left: 1260px;
+    margin-right: 35px;
+    margin-left: 35px;
+    top: 41px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+}
+.navbar > .button_again2{
+    font-family:"League Spartan";
+    background-color:black; 
     color:#ffff;
-    margin: 5px; 
-    border-radius: 25px; 
-    padding: 10px 40px;
+    border-radius:5px; 
+    height: 40px;
+    width: 150px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0em;
+}
+.navbar-menu > .button_adopcion{
+    font-family:"League Spartan";
+    background-color: #332213; 
+    color:#ffff;
+    border-radius:5px; 
+    height: 40px;
+    width: 279px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0em;
 }
 
-.button_adopcion{
-    background-color: #332213!important; 
-    color:#ffff!important;
-    margin: 5px; 
-    border-radius: 25px!important; 
-    padding: 10px 40px!important; 
-    height: 35px!important;
+#title_dogs{
+    text-align: center;
+    padding: 60px 0px 16px 0px;
+    color: black;
+    font-family: 'League Spartan';
+    font-weight: 400;
+    font-size: 30px;
 }
 
-
-/*CSS categorias*/
+/*CSS categorias de busqueda de perros y gatos*/
 
 #hembra, #Macho{
     font-size: 20px;
     color: black;
     
 }
+ .title_cat{
+    margin-left: 25px;
+    text-align: left;  
+    color: black;
+    font-family: 'League Spartan';
+    font-weight: 400;
+    font-size: 25px;
 
+ }
 .store-adopt{
     display: flex;
 }
@@ -88,9 +144,13 @@ button.button_again:hover, button.button_adopcion:hover{
   .buscar input:focus {
     width: 90%;
   }
+  .buscador_category{
+    text-align:center; 
+    margin:20px;
+  }
 
 
-/* CSS mascotas*/
+/* CSS de tarjetas de mascotas en adopcion en el catalogo*/
 
 .product-animals{
     width: 75%;
@@ -104,7 +164,7 @@ button.button_again:hover, button.button_adopcion:hover{
     margin-bottom: 25px;
 box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.22);
 background-color: #9e724e;
-border-radius: 25px;
+border-radius: 20px 20px 0px 0px;
 }
 
 .product-animals .product-item .buscador_category{
@@ -114,29 +174,76 @@ border-radius: 25px;
 
 
 .product-animals .product-item img{
-    border-radius: 20px ;
+    border-radius: 20px 20px 0px 0px ;
     width: 100%;
 }
 
 
-.button_adopcion2{
+.buscador_category > .button_adopcion2{
     background-color: #332213; 
-    color:#ffff!important;
+    color:#ffff;
     margin: 5px; 
-    border-radius: 25px!important; 
-    padding: 10px 25px!important; 
-    height: 35px!important;
+    border-radius: 5px; 
+    padding: 10px 25px; 
+    height: 35px;
+    font-family: 'League Spartan';
+    font-size: 16px;
+    font-weight: 400;
 }
-.button_adopcion3{
-    background-color: #FF0000!important; 
-    color:#ffff!important;
+.buscador_category >  .button_adopcion3{
+    background-color: #FF0000; 
+    color:#ffff;
     margin: 5px; 
-    border-radius: 25px!important; 
-    padding: 10px 25px!important; 
-    height: 35px!important;
+    border-radius: 5px; 
+    padding: 10px 25px; 
+    height: 35px;
+    font-family: 'League Spartan';
+    font-size: 16px;
+    font-weight: 400;
 }
 
-/*CSS detalles de compra*/
+.nombre_mascota{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'League Spartan';
+    font-weight: 400;
+}
+
+/*CSS detalles de la mascota en adopción*/
+
+.detalle-animal {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.foto_description{
+    display: flex;
+}
+
+h1#title_description{
+    margin-left: 17%;
+    text-align: center;
+    padding: 65px 0px 30px 0px;
+    color: black;
+    font-size: 30px;
+    font-family: 'League Spartan';
+    
+}
+
+h1#title_foto{
+    margin-left: 36%;
+    text-align: center;
+    padding: 65px 0px 30px 0px; 
+    color: black;
+    font-size: 26px;
+    font-family: 'League Spartan';
+    
+}
+
 
 .foto-mascota{
     display: flex;
@@ -165,14 +272,16 @@ border-radius: 25px;
 li.description-mascota {
     color: black;
     margin: 10px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
+    font-family: 'League Spartan';
 }
 h5.datos {
     color: black;
     margin: 10px;
-    font-size: 17px;
-    font-weight: 300;
+    font-size: 22px;
+    font-weight: 100;
+    font-family: 'League Spartan';
 }
 .product-animals2{
     width: 100%;
@@ -186,7 +295,7 @@ h5.datos {
     margin-bottom: 25px;
 box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.22);
 background-color: #9e724e;
-border-radius: 25px;
+border-radius: 20px 20px 0px 0px;
 }
 
 .product-animals2 .product-item .buscador_category{
@@ -196,7 +305,7 @@ border-radius: 25px;
 
 
 .product-animals2 .product-item img{
-    border-radius: 20px ;
+    border-radius: 20px 20px 0px 0px ;
     width: 100%;
 }
 
