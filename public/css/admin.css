@@ -41,12 +41,19 @@
   color: #f9f9f9;
 }
 
+.content-right {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  right: 0;
+}
+
 #image-right {
   background-image: url(../assets/icon-dogcat.webp);
   background-size: 256px;
   background-repeat: no-repeat;
   background-position: bottom;
-  height: 64px;
+  height: 84px;
   width: 256px;
 }
 
@@ -96,7 +103,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--primary-color-2);
+  background: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   opacity: 0;
   transition: 0.3s;
@@ -105,18 +112,6 @@
 body.open .navbar-overlay {
   visibility: visible;
   opacity: 1;
-}
-
-@media only screen and (min-width: 600px) {
-  .navbar-overlay {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .navbar-burger {
-    display: none;
-  }
 }
 
 .navbar-title {
@@ -128,6 +123,22 @@ body.open .navbar-overlay {
   margin-left: 5px;
 }
 
+.navbar-menu-header {
+  background-color: var(--primary-color-1);
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.header-icon {
+  margin: 10px auto 0px auto;
+  background-image: url(../assets/icono_admin.webp);
+  background-size: 60px;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+}
+
 .navbar-menu {
   position: fixed;
   z-index: 3;
@@ -136,45 +147,94 @@ body.open .navbar-overlay {
   translate: -100% 0;
   width: 270px;
   height: 100%;
-  padding: 20px;
   display: flex;
-  gap: 8px;
+  gap: 1px;
   flex-direction: column;
   align-items: flex-start;
-  background: var(--primary-color-3);
+  background: var(--primary-color-5);
   visibility: hidden;
+  display: none;
   transition: translate 0.3s;
 }
 
 body.open .navbar-menu {
   translate: 0 0;
   visibility: visible;
+  display:flex;
 }
 
-@media only screen and (min-width: 600px) {
-  .navbar-menu {
-    position: static;
-    translate: 0 0;
-    width: auto;
-    background: transparent;
-    flex-direction: row;
-    visibility: visible;
-  }
-}
 
 body.open .navbar-menu>button {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(0, 0, 0, 0);
+  color: rgb(0, 0, 0);
   border-radius: 0px;
   padding: 0 0px;
   height: 40px;
   width: 100%;
   text-align: left;
+  border-color: var(--primary-color-2);
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-weight: bolder;
+  padding-left: 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+body.open .navbar-menu>button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+body.open .navbar-menu>button:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.submenu > a{
+  font-size: large;
+  padding-left: 20px;
+}
+.submenu {
+  color: black;
+  font-weight: bold;
+}
+
+.submenu > button {
+  background: transparent;
+  color: rgb(0, 0, 0);
+  border-radius: 0px;
+  padding: 0 0px;
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  border-color: var(--primary-color-2);
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-weight: bolder;
+  padding-left: 40px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.submenu > button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.submenu > button:focus {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #button-add,
 #button-back {
   cursor: pointer;
+  border: none;
+  margin-left: 10px;
 }
 
 #button-add {
@@ -184,8 +244,7 @@ body.open .navbar-menu>button {
   border-radius: 5px;
   height: 24px;
   line-height: 24px;
-  min-width: 110px;
-  max-width: 110px;
+  width: fit-content;
 }
 
 #button-back {
@@ -229,27 +288,37 @@ body {
 .action-edit, .action-delete {
   display: block;
   color: white;
+  width: 100px;
+  height: 25px;
+  padding-left: 20px;
+  cursor: pointer;
 }
 
 .action-edit {
   border: none;
   background-color:var(--primary-color-2);
-  width: 100px;
-  height: 25px;
-  margin: 2px;
+  margin: 5px auto 5px auto;
 }
 
 .action-delete {
   border: none;
   background-color:var(--primary-color-4);
-  width: 100px;
-  height: 25px;
-  margin: 2px;
+  margin: 5px auto 5px auto;
 }
 
-span.icon {
+.icon-edit {
   background: url(../assets/icono_editar.webp) no-repeat;
-  float: left;
+  background-size: 20px;
+  float:left;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-delete {
+  background: url(../assets/icono_eliminar.webp) no-repeat;
+  background-size: 15px;
+  background-position: center;
+  float:left;
   width: 20px;
   height: 20px;
 }
@@ -266,21 +335,19 @@ table {
 th,
 td {
   text-align: center;
-  padding: 4px;
+  background-color: white;
+  color: black;
 }
 
 th {
   border: 1px solid rgba(0, 0, 0, 0.20);
   border-style: inset;
-  background-color: white;
   color: black;
   font-weight: normal;
 }
 
 td {
   border-left: 1px solid rgba(0, 0, 0, 0.20);
-  background-color: white;
-  color: black;
 }
 
 caption {
@@ -289,4 +356,94 @@ caption {
   font-size: 16px;
   font-weight: bold;
   padding-top: 5px;
+}
+
+#close-dialog {
+  float: right;
+  padding-top: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+#upload-photo {
+  display:none;
+}
+
+#imagen {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#button-add-new {
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  background-color: red;
+  height: 30px;
+  width: 60px;
+  line-height: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.form-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+.input {
+width: 150px;
+float:right;
+height: 30px;
+line-height: 30px;
+}
+
+.input-item {
+  width: 100%;
+  height: 100px;
+}
+
+.input-form-right {
+  float:right;
+  width: 100%;
+  height: 100%;
+  white-space:pre-line;
+}
+
+.modal-content
+{
+	margin: 10% auto auto auto;  /*15% from the top and centered */
+	background-color: rgb(255,255,255);
+	background-color: rgba(255,255,255,1.0);
+	text-align: center;
+	width: 50%; /* Could be more or less, depending on screen size */
+	box-shadow: -5px 10px 20px 1px rgba(0,0,0,0.25), inset 0px 0px 0px 0px rgba(0, 0, 0, 0.0);
+  height: auto;
+  padding: 20px;
+  color: black;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 16384; /* Sit on top */
+  left: 0px;
+  top: 0px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Enable vertical scroll if needed */
+  overflow-x: hidden; /* Hidden horizontal scroll */
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
 }

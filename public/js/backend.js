@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
 import { getStorage, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js"
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, onSnapshot, doc } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,17 +28,18 @@ const storage = getStorage(app);
 const db = getFirestore(app);
 
 // Agrega un nuevo objecto a la base de datos
-async function addNewAmimal() {
+export async function addNewAmimal() {
   let object = {
-    nombre: document.querySelector("#nombre").value,
+    Nombre: document.querySelector("#nombre").value,
     Talla: document.querySelector("#talla").value,
     Edad: document.querySelector("#edad").value,
     Color: document.querySelector("#color").value,
     Sexo: document.querySelector("#sexo").value,
-    Imagen: document.querySelector("#imagen").value,
+    Imagen: "imagen",
     Descripcion: document.querySelector("#descripcion").value,
     Razon: document.querySelector("#razon").value
   };
+
   try {
     const docRef = await addDoc(collection(db, "mascotas"), object);
     console.log("Document written with ID: ", docRef.id);
@@ -47,7 +48,31 @@ async function addNewAmimal() {
   }
 }
 
-function uploadFile(file) {
+window.addnew = addNewAmimal;
+
+const querySnapshot = await getDocs(collection(db, "mascotas"));
+querySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+  console.log(doc.id, " => ", doc.data());
+  let tab;
+tab = document.getElementById('tabs');
+tab.innerHTML += `
+    <tr>
+    <td>${doc.id}</td>
+    <td>${doc.data().Nombre}</td>
+    <td>${doc.data().Talla}</td>
+    <td>${doc.data().Edad}</td>
+    <td>${doc.data().Color}</td>
+    <td>${doc.data().Sexo}</td>
+    <td>${doc.data().Imagen}</td>
+    <td>${doc.data().Descripcion}</td>
+    <td>${doc.data().Razon}</td>
+    <td>actions</td>
+    </tr>
+    `;
+});
+
+export function uploadFile(file) {
   // Create a reference to 'images/mountains.jpg'
   const storageRef = ref(storage, "images/mountains.jpg");
   // Upload the file and metadata

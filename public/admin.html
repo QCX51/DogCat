@@ -7,6 +7,74 @@
     <link rel="stylesheet" href="css/admin.css" />
 </head>
 <body>
+<div class="modal">
+<div class="modal-content">
+<span id="close-dialog" onclick="closeDialog()">X</span>
+<h4>FORMULARIO PARA AGREGAR UNA MASCOTA</h4>
+<p>Ingresa aquí los datos de la mascota que deseas dar en adopción</p>
+<div class="form-content">
+<form>
+<table style="border:none;">
+<thead>
+<tr>
+<th>Nombre:</th>
+<th><input class="input" type="text" id="nombre" placeholder="Nombre" /></th>
+</tr>
+<tr>
+<th>Talla:</th>
+<th>
+<select class="input" id="talla">
+<option>Cachorro</option>
+</select>
+</th>
+</tr>
+<tr>
+<th>Edad:</th>
+<th>
+<input class="input" type="number" id="edad" placeholder="Edad"/>
+</th>
+</tr>
+<tr>
+<th>Color:</th>
+<th><input class="input" type="text" id="color" placeholder="Color" /></th>
+</tr>
+<tr>
+<th>Sexo</th>
+<th>
+<select class="input" id="sexo">
+<option>Hembra</option>
+<option>Macho</option>
+</select>
+</th>
+</tr>
+<tr>
+<th>Fotografia</th>
+<th>
+<label for="upload-photo">
+<input type="file" id="upload-photo" accept="image/*"/>
+<span class="input" id="imagen">Examinar</span>
+</label>
+</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</form>
+<form>
+<div class="input-item">
+<label>Descripción:</label>
+<input class="input-form-right" type="text" id="descripcion" placeholder="Por favor, escribe aquí una breve descripción de la mascota (carácter, gustos, costumbres...)" />  
+</div>
+<div class="input-item">
+<label>Razón:</label>
+<input class="input-form-right" type="text" id="razon" placeholder="Por favor, escribe aquí el porqué deseas dar esta mascota en adopción..." />  
+</div>
+<button type="button" id="button-add-new" onclick="addnew()">Agregar</button>
+</form>
+</div>
+</div>
+</div>
 <nav class="navbar">
 <div class="navbar-cont">
 <button type="button" class="navbar-burger" onclick="toggleMenuOpen()"></button>
@@ -15,14 +83,29 @@
 </div>
 <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
 <nav class="navbar-menu">
-<div id="image-right"></div>
-<button id="button-add" type="button">Anadir mascota</button>
-<button id="button-back" type="button">Volver</button>
+<div class="navbar-menu-header">
+<div class="header-icon"></div>
+<h1>ADMINISTRADOR</h1>
+</div>
+<button>Perfil</button>
+<div class="submenu"><a>Catálogo de mascotas</a>
+<button>Catálogo de perros</button>
+<button>Catálogo de gatos</button>
+</div>
+<button>Solicitudes de acogida</button>
+<button>Solicitudes de adopción</button>
+<button>Donaciones</button>
+
 </nav>
+<div class="content-right">
+  <div id="image-right"></div>
+  <button id="button-add" onclick="showDialog()" type="button">Anadir mascota</button>
+  <button id="button-back" onclick="window.location.href = 'index.html'" type="button">Volver</button>
+</div>
 </nav>
 <div class="container">
 <div class="table">
-    <table>
+    <table id="tabs">
         <caption>Gestión de mascotas</caption>
         <thead>
           <tr>
@@ -40,7 +123,7 @@
           </tr>
       </thead>
       <tbody>
-          <tr>
+          <!-- <tr>
             <td>0</td>
             <td>5</td>
             <td>8</td>
@@ -51,10 +134,10 @@
             <td>8</td>
             <td>0</td>
             <td>
-            <button class="action-edit"><span class="icon"></span>Editar</button>
-            <button class="action-delete">Eliminar</button>
+            <button class="action-edit"><span class="icon-edit"></span>Editar</button>
+            <button class="action-delete"><span class="icon-delete"></span>Eliminar</button>
             </td>
-          </tr>
+          </tr> -->
       </tbody>
     </table>
 </div>
