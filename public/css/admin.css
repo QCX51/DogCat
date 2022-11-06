@@ -369,6 +369,11 @@ caption {
   display:none;
 }
 
+.thumbnail {
+  width: 100px;
+  height: 100px;
+}
+
 #imagen {
   background-color: black;
   color: white;
