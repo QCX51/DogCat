@@ -71,6 +71,7 @@ function initOAuth(network, force = false) {
 let map, marker;
 async function initMap()
 {
+<<<<<<< HEAD
 let data =
 {
 latitud: parseFloat("20.485193215567346"),
@@ -102,6 +103,37 @@ map,
 icon: icon,
 title: data.nombre, // Agrega un titulo la marcador
 });
+=======
+    let data = {
+      latitud: parseFloat("20.485193215567346"),
+      longitud: parseFloat("-99.21841097091944"),
+      nombre: "Ubicacion",
+    };
+    // Asigna las coordenadas: longitud, latitud a la constante coords
+    // Mustra el mapa con las coordenadas asignadas
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: data.latitud, lng: data.longitud }, // centra el mapa en las coordenadas asignadas a la constante
+      zoom: 17,
+    });
+
+    // Especifica un marcador personalizado con el tamano determinado
+    const icon = {
+      url: "images/dog-cat.gif", // url
+      scaledSize: new google.maps.Size(60, 60), // scaled size
+      origin: new google.maps.Point(0, 0), // origin
+      anchor: new google.maps.Point(0, 0), // anchor
+    };
+
+    // Agrega un marcador al mapa
+    marker = new google.maps.Marker({
+      draggable: true,
+      animation: google.maps.Animation.DROP,
+      position: { lat: data.latitud, lng: data.longitud }, // centra el marcador en las coordenadas asignadas a la constante
+      map,
+      icon: icon,
+      title: data.nombre, // Agrega un titulo la marcador
+    });
+>>>>>>> Update11082022
 }
 
 // ########## Email / Password validations
