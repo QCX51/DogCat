@@ -216,31 +216,3 @@ function uploadFile(file) {
       reader.readAsArrayBuffer(file);
 }
 
-// Create a reference under which you want to list
-const listRef = ref(storage, 'mascotas/perros');
-// Find all the prefixes and items.
-listAll(listRef)
-  .then((res) => {
-    res.prefixes.forEach((folderRef) => {
-      // All the prefixes under listRef.
-      // You may call listAll() recursively on them.
-    });
-    res.items.forEach((itemRef) => {
-      // All the items under listRef.
-
-      // Delete the file
-      /*
-      deleteObject(itemRef)
-        .then(() => {
-          // File deleted successfully
-          console.log("ok");
-        })
-        .catch((error) => {
-          // Uh-oh, an error occurred!
-          console.log("fail");
-        });
-        */
-    });
-  }).catch((error) => {
-    // Uh-oh, an error occurred!
-  });

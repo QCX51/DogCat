@@ -20,6 +20,57 @@
       referrerpolicy="no-referrer"
     />
 
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+    var current = 0;
+    var imagenes = new Array();
+     
+    $(document).ready(function() {
+        var numImages = 6;
+        if (numImages <= 2) {
+            $('.right-arrow').css('display', 'none');
+            $('.left-arrow').css('display', 'none');
+        }
+     
+        $('.left-arrow').on('click',function() {
+            if (current > 0) {
+                current = current - 1;
+            } else {
+                current = numImages - 2;
+            }
+     
+            $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+     
+            return false;
+        });
+     
+        $('.left-arrow').on('hover', function() {
+            $(this).css('opacity','0.5');
+        }, function() {
+            $(this).css('opacity','1');
+        });
+     
+        $('.right-arrow').on('hover', function() {
+            $(this).css('opacity','0.5');
+        }, function() {
+            $(this).css('opacity','1');
+        });
+     
+        $('.right-arrow').on('click', function() {
+            if (numImages > current + 2) {
+                current = current+1;
+            } else {
+                current = 0;
+            }
+     
+            $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+     
+            return false;
+        }); 
+     });
+    </script>
+
+
 </head>
     <script
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKH3MFAxTeIHbLHs7KzJnp8xkFsmheCCo&callback=initMap&libraries=&v=weekly"
@@ -43,6 +94,8 @@ defer>
 
 
 <div class="container" >
+
+
 <h1 id="title_dogs">Perros en espera de adopción....</h1>
 
 
@@ -69,9 +122,9 @@ defer>
               <i class="fas fa-search icon"></i>
             </div>
           </div>
-          <div class="buscador_category" style="text-align:center; margin:20px;">
+          <div class="buscador_category" style=" text-align:center; margin:20px;">
           <button class="button_adopcion2">BUSCAR</button>
-          <button class="button_adopcion3">LIMPIAR</button>
+          <button class="button_adopcion3">CANCELAR</button>
         </div>
     </div>
 
@@ -146,13 +199,66 @@ defer>
                             <button class="button_adopcion3">ADOPTAME</button>
                             </div>
                             </div>
-                            
-
-
-
 </section>
-</div>
 
+</div>
+<div class="version_resp">
+<h1 id="title_dogs">Perros en espera de adopción....</h1>
+</div>
+<div id="carrusel">
+  <a href="#" class="left-arrow"><img src="images/left-arrow.png" /></a>
+  <a href="#" class="right-arrow"><img src="images/right-arrow.png" /></a>
+  <div class="carrusel">
+    <div class="product-item" id="product_0" category="">
+      <img src="images/perro_catalogo.jpg" width="195" height="100" alt="">
+      <h2 class="nombre_mascota" > Nombre</h2>
+      <div class="buscador_category2" style="text-align:center;">
+      <button class="button_adopcion2" onclick="newdoc('conocer')">CONOCER</button>
+      <button class="button_adopcion3">ADOPTAME</button>
+      </div>
+      </div>
+      <div class="product" id="product_1">
+        <img src="images/perro_catalogo.jpg" width="195" height="100" alt="">
+        <h2 class="nombre_mascota" > Nombre</h2>
+        <div class="buscador_category2" style="text-align:center;">
+        <button class="button_adopcion2" onclick="newdoc('conocer')">CONOCER</button>
+        <button class="button_adopcion3">ADOPTAME</button>
+        </div>
+      </div>
+      <div class="product" id="product_2">
+        <img src="images/perro_catalogo.jpg" width="195" height="100" alt="">
+        <h2 class="nombre_mascota" > Nombre</h2>
+        <div class="buscador_category2" style="text-align:center;">
+        <button class="button_adopcion2" onclick="newdoc('conocer')">CONOCER</button>
+        <button class="button_adopcion3">ADOPTAME</button>
+        </div>
+      </div>
+      <div class="product" id="product_3">
+        <img src="images/perro_catalogo.jpg" width="195" height="100" alt="">
+        <h2 class="nombre_mascota" > Nombre</h2>
+        <div class="buscador_category2" style="text-align:center;">
+        <button class="button_adopcion2" onclick="newdoc('conocer')">CONOCER</button>
+        <button class="button_adopcion3">ADOPTAME</button>
+        </div>
+      </div>
+      <div class="product" id="product_4">
+        <img src="images/perro_catalogo.jpg" width="195" height="100" alt="">
+        <h2 class="nombre_mascota" > Nombre</h2>
+        <div class="buscador_category2" style="text-align:center; ">
+        <button class="button_adopcion2" onclick="newdoc('conocer')">CONOCER</button>
+        <button class="button_adopcion3">ADOPTAME</button>
+        </div>
+      </div>
+      <div class="product" id="product_5">
+        <img src="images/perro_catalogo.jpg" width="195" height="100" alt="">
+        <h2 class="nombre_mascota" > Nombre</h2>
+        <div class="buscador_category2" style="text-align:center;">
+        <button class="button_adopcion2" onclick="newdoc('conocer')">CONOCER</button>
+        <button class="button_adopcion3">ADOPTAME</button>
+        </div>
+      </div>
+  </div>
+</div>
 </div>
 </div>
 

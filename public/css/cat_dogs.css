@@ -225,21 +225,22 @@ border-radius: 20px 20px 0px 0px;
 }
 
 h1#title_description{
-    margin-left: 17%;
-    text-align: center;
-    padding: 65px 0px 30px 0px;
-    color: black;
-    font-size: 30px;
-    font-family: 'League Spartan';
-    
-}
-
-h1#title_foto{
     margin-left: 36%;
     text-align: center;
     padding: 65px 0px 30px 0px; 
     color: black;
     font-size: 26px;
+    font-family: 'League Spartan';
+    
+}
+
+h1#title_foto{
+    
+    margin-left: 17%;
+    text-align: center;
+    padding: 65px 0px 30px 0px;
+    color: black;
+    font-size: 30px;
     font-family: 'League Spartan';
     
 }
@@ -309,6 +310,230 @@ border-radius: 20px 20px 0px 0px;
     width: 100%;
 }
 
+/*Responsive catalogos completos*/
+
+@media screen and (max-width:900px){
+    .navbar-menu > .button_again2 {
+        display: none;
+    }
+
+    .navbar-menu > .button_adopcion {
+        height: 30px;
+        width: 131px;
+        margin-top: 2px;
+        height: 40px;
+        width: 160px;
+        font-size: 14px;
+    }
+
+    .navbar {
+        position: absolute!important;
+    }
+    .text_amigo {
+        font-family: 'League Spartan';
+        font-size: 16px;
+        position: absolute;
+    }
+    .product-animals {
+        
+        display: none;
+   
+    }
+    .detalles-mascota {
+        display: flex;
+        margin: 3%;
+    }
+
+    #carrusel {
+        
+            float: left;
+            width: 100%;
+            overflow: hidden;
+            height: 60%;
+            position: absolute;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        
+    }
+     
+    #carrusel .left-arrow {
+        position:absolute;
+        left:10px;
+        z-index:1;
+        top:50%;
+        margin-top:-9px;
+    }
+     
+    #carrusel .right-arrow {
+        position:absolute;
+        right:10px;
+        z-index:1;
+        top:50%;
+        margin-top:-9px;
+    }
+     
+    .carrusel {
+        width: 534%;
+    left: 0px;
+    position: absolute;
+    z-index: 0;
+    }
+     
+    .carrusel>div {
+        float: left;
+    height: 100%;
+    margin: 0px 30px 0px 30px;
+    width: 7%;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #9e724e;
+    }
+     
+    .carrusel img {
+        width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    cursor: pointer;
+    height: 58%;
+    }
+     
+    .product {
+        border:#CCCCCC 1px solid;
+    }
+
+    h2.nombre_mascota {
+        font-size: 20px;
+    }
+    .buscador_category {
+        align-self: center;
+        display: flex;
+    }
+    
+    
+    .buscador_category2 > .button_adopcion2{
+        background-color: #332213; 
+        color:#ffff;
+        margin: 5px; 
+        border-radius: 5px; 
+        padding: 10px 17px; 
+        height: 35px;
+        font-family: 'League Spartan';
+        font-size: 13px;
+        font-weight: 400;
+        
+    }
+    .buscador_category2 >  .button_adopcion3{
+        background-color: #FF0000; 
+        color:#ffff;
+        margin: 5px; 
+        border-radius: 5px; 
+        padding: 10px 17px; 
+        height: 35px;
+        font-family: 'League Spartan';
+        font-size: 13px;
+        font-weight: 400;
+    
+    }
+    
+
+    .category-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 20%;
+        margin: 12% 20% 2%;
+    }
+
+    .container > h1#title_dogs {
+        display: none;
+    }
+    .version_resp > h1#title_dogs {
+        padding: 0%;
+    }
+    .store-adopt > .product-animals2{
+        display: none;
+    }
+
+    .foto_description {
+        display: block;
+    }
+    h1#title_description {
+        margin-left: 0px;
+        padding: 65px 0px 0px 0px;
+    }
+    h1#title_foto {
+        display: none;
+    }
+    .foto-adopcion {
+        display: block;
+        flex-direction: column;
+        width: 100%;
+        height: 20%;
+        margin: 10%;
+    }
+
+    .foto-mascota > .detalles-animal {
+        display: none;
+    }
+    .foto-mascota > .detalle-animal {
+        display: none;
+    }
+    .detalles-mascota {
+        display: flex;
+    }
+    .detalles-animal {
+        width: 50%;
+        margin-bottom: 0px;
+    margin-top: 0px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .detalle-animal {
+        display: flex;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    h5.datos {
+        color: black;
+        margin: 10px;
+        font-size: 17px;
+        font-weight: 100;
+        font-family: 'League Spartan';
+    }
+    li.description-mascota {
+        color: black;
+        margin: 10px;
+        font-size: 17px;
+        font-weight: 600;
+        font-family: 'League Spartan';
+    }
+
+    .foto-adopcion > img{
+        width: 100%;
+        height: 100%;
+    }
+    .detalles-animal .detalle-animales {
+        width: 100%;}
+
+}
+
+
+@media screen and (min-width:900px){
+
+
+    .detalles-mascota {
+        display: none;
+    }
+
+    #carrusel{
+        display: none;
+    }
+
+    .version_resp > h1#title_dogs {
+        display: none;
+    }
+}
+
 
 /*CSS principal*/
 
@@ -345,7 +570,7 @@ button {
     color: #f9f9f9;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 400px) {
     .navbar {
         justify-content: space-between;
         padding: 0 0 0 16px;
@@ -370,7 +595,7 @@ body.open .navbar-overlay {
     opacity: 1;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 400px) {
     .navbar-overlay {
         display: none;
     }
@@ -387,7 +612,7 @@ body.open .navbar-overlay {
     padding: 0;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 400px) {
     .navbar-burger {
         display: none;
     }
@@ -421,7 +646,7 @@ body.open .navbar-menu {
     visibility: visible;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 400px) {
     .navbar-menu {
         position: static;
         translate: 0 0;
