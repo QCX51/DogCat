@@ -199,3 +199,12 @@ function dropHandler(ev) {
     ev.preventDefault();
   }
   
+
+  function select(kind){
+    if (kind =="dogs"){
+        window.location.href ="Catalogo_dogs.html";
+    }
+    else {
+        window.location.href ="Catalogo_cats.html";
+    }
+  }
