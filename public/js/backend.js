@@ -74,6 +74,7 @@ const unsub = onSnapshot(collection(db, "mascotas"), (querySnapshot) => {
     <td>${doc.data().Color}</td>
     <td>${doc.data().Sexo}</td>
     <td><img alt="image" class="thumbnail" src="${doc.data().Thumbnail}"></td>
+    <td>${doc.data().Raza}</td>
     <td>${doc.data().Descripcion}</td>
     <td>${doc.data().Razon}</td>
     <td>
@@ -187,6 +188,7 @@ function uploadFile(file) {
           Edad: document.querySelector("#edad").value,
           Color: document.querySelector("#color").value,
           Sexo: document.querySelector("#sexo").value,
+          Raza: document.querySelector("#raza").value,
           Thumbnail: downloadURL,
           Descripcion: document.querySelector("#descripcion").value,
           Razon: document.querySelector("#razon").value
