@@ -1,3 +1,29 @@
+ .contFul{
+    max-width: 30 xp;
+ }
+
+ .izFloat{
+    float: left;
+    width: 33%;
+    height: 15%;
+ }
+
+ .deFloat{
+    float: right;
+    width: 40%;
+ }
+.div1Medio{
+    width: 90%;
+}
+ 
+#imgMascota626{
+    width: 97%;
+    height: 97%;
+}
+
+.doFloat{
+    float: right;
+}
 
 @font-face
 {

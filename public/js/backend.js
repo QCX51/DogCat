@@ -158,7 +158,8 @@ function uploadFile(file) {
         case "running":
           console.log("Upload is running");
           break;
-      }
+      } 
+      
     },
     (error) => {
      isUploading = false;

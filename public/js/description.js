@@ -94,7 +94,7 @@ $(document).ready(function() {
                             </ul>
 
                             <div class="buscador_category" style="text-align:center; margin:20px;">
-                                <button class="button_adopcion2" style="background-color: #FF0000;">ADOPTAR AHORA</button></div>
+                                <button class="button_adopcion2" style="background-color: #FF0000;" onclick="btnSolicitarAdopcion7(${row1.id});">ADOPTAR AHORA</button></div>
                             </div>
                         </section>
                     </div>
@@ -127,7 +127,7 @@ $(document).ready(function() {
                         </ul>
 
                         <div class="buscador_category" style="text-align:center; margin:20px;">
-                            <button class="button_adopcion2" style="background-color: #FF0000;">ADOPTAR AHORA</button></div>
+                            <button class="button_adopcion2" style="background-color: #FF0000;" onclick="btnSolicitarAdopcion7(${row1.id});">ADOPTAR AHORA</button></div>
                     </div>
                 </section>                
                 
@@ -157,8 +157,8 @@ $(document).ready(function() {
                                         <img src=${row3.foto} alt="">
                                         <h2 class="nombre_mascota" > ${row3.nombre}</h2>
                                         <div class="buscador_category" style="text-align:center; margin:20px;">
-                                        <button class="button_adopcion2" onclick="conocerMascota7(${row3.id});">CONOCER</button>
-                                        <button class="button_adopcion3">ADOPTAME</button>
+                                        <button class="button_adopcion2" onclick="conocerMascota7(${row3.id});">CONOCEME</button>
+                                        <button class="button_adopcion3" onclick="btnSolicitarAdopcion7(${row3.id});">ADOPTAME</button>
                                         </div>
                                     </div>
                                     
@@ -171,8 +171,8 @@ $(document).ready(function() {
                                         <img src=${row3.foto} width="195" height="100" alt="">
                                         <h2 class="nombre_mascota" > ${row3.nombre}</h2>
                                         <div class="buscador_category2" style="text-align:center;">
-                                            <button class="button_adopcion2" onclick="conocerMascota7(${row3.id});">CONOCER</button>
-                                            <button class="button_adopcion3">ADOPTAME</button>
+                                            <button class="button_adopcion2" onclick="conocerMascota7(${row3.id});">CONOCEME</button>
+                                            <button class="button_adopcion3" onclick="btnSolicitarAdopcion7(${row3.id});">ADOPTAME</button>
                                         </div>
                                     </div>
                                     
@@ -212,6 +212,12 @@ $(document).ready(function() {
       window.location.reload();
     }
 
+    function btnSolicitarAdopcion7(idA) {
+        console.log("funcion adoptar");
+        localStorage.setItem("idMascotaForSolicitarAdopcion",idA);
+        console.log(localStorage.getItem("idMascotaForSolicitarAdopcion"));
+        window.location= 'adoptar.html'; 
+    }
 
 function volver999() {
   if (localStorage.getItem("valorBotonVolver")=="perro") {

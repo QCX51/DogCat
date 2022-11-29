@@ -78,8 +78,8 @@ $.post('php/selectCatalogo.php',{
                 <img src=${row1.foto} alt="">
                 <h2 class="nombre_mascota" >${row1.nombre}</h2>
                 <div class="buscador_category" style="text-align:center; margin:20px;">
-                  <button class="button_adopcion2" onclick="conocerMascota7(${row1.id});">CONOCER</button>
-                  <button class="button_adopcion3">ADOPTAME</button>
+                  <button class="button_adopcion2" onclick="conocerMascota7(${row1.id});">CONOCEME</button>
+                  <button class="button_adopcion3" onclick="btnSolicitarAdopcion7(${row1.id});">ADOPTAME</button>
                 </div>
               </div>               
             
@@ -91,8 +91,8 @@ $.post('php/selectCatalogo.php',{
               <img src=${row1.foto} width="195" height="100" alt="">
               <h2 class="nombre_mascota" > ${row1.nombre}</h2>
               <div class="buscador_category2" style="text-align:center;">
-              <button class="button_adopcion2" onclick="conocerMascota7(${row1.id});">CONOCER</button>
-              <button class="button_adopcion3">ADOPTAME</button>
+              <button class="button_adopcion2" onclick="conocerMascota7(${row1.id});">CONOCEME</button>
+              <button class="button_adopcion3" onclick="btnSolicitarAdopcion7(${row1.id});">ADOPTAME</button>
               </div>
             </div>             
             
@@ -121,7 +121,12 @@ $.post('php/selectCatalogo.php',{
   window.location= 'Description.html'; 
 }
 
-
+function btnSolicitarAdopcion7(idA) {
+  console.log("funcion adoptar");
+  localStorage.setItem("idMascotaForSolicitarAdopcion",idA);
+  console.log(localStorage.getItem("idMascotaForSolicitarAdopcion"));
+  window.location= 'adoptar.html'; 
+}
 
 function btnbusqueda999(){
   console.log('buscar');
@@ -159,8 +164,8 @@ function btnbusqueda999(){
                             <img src=${row6.foto} alt="">
                             <h2 class="nombre_mascota" >${row6.nombre}</h2>
                             <div class="buscador_category" style="text-align:center; margin:20px;">
-                            <button class="button_adopcion2" onclick="conocerMascota7(${row6.id});">CONOCER</button>
-                            <button class="button_adopcion3">ADOPTAME</button>
+                            <button class="button_adopcion2" onclick="conocerMascota7(${row6.id});">CONOCEME</button>
+                            <button class="button_adopcion3" onclick="btnSolicitarAdopcion7(${row6.id});">ADOPTAME</button>
                             </div>
                             </div>
                           
@@ -173,8 +178,8 @@ function btnbusqueda999(){
                             <img src=${row6.foto} width="195" height="100" alt="">
                             <h2 class="nombre_mascota" >${row6.nombre}</h2>
                             <div class="buscador_category2" style="text-align:center;">
-                              <button class="button_adopcion2" onclick="conocerMascota7(${row6.id});">CONOCER</button>
-                              <button class="button_adopcion3">ADOPTAME</button>
+                              <button class="button_adopcion2" onclick="conocerMascota7(${row6.id});">CONOCEME</button>
+                              <button class="button_adopcion3" onclick="btnSolicitarAdopcion7(${row6.id});">ADOPTAME</button>
                             </div>
                           </div>
                           
