@@ -406,6 +406,13 @@ height: 30px;
 line-height: 30px;
 }
 
+#valDes{
+width: 150px;
+float:right;
+height: 130px;
+line-height: 30px;
+}
+
 .input-item {
   width: 100%;
   height: 100px;

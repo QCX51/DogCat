@@ -11,71 +11,37 @@
 <div class="modal">
 <div class="modal-content">
 <span id="close-dialog" onclick="closeDialog()">X</span>
-<h4>FORMULARIO PARA AGREGAR UNA MASCOTA</h4>
-<p>Ingresa aquí los datos de la mascota que deseas dar en adopción</p>
+<h4>FORMULARIO PARA AGREGAR UNA DONACION</h4>
+<p>Ingresa aquí los datos de la donacion a realizar</p>
 <div class="form-content">
 <form id="formParte1" name="formParte1" enctype="multipart/form-data" method="post">
   <table style="border:none;">
     <thead>
     <tr>
     <th>Nombre:</th>
-    <th><input name="valNombre" class="input" type="text" id="nombre" placeholder="Nombre" /></th>
+    <th><input name="valNom" class="input" type="text" id="nombre" placeholder="Nombre" /></th>
     </tr>
     <tr>
-      <th>Raza:</th>
+      <th>Telefono:</th>
       <th>
-        <select name="valRaza" class="input" id="raza">
-          <option value="perro">Perro</option>
-          <option value="gato">Gato</option>
-        </select>
-      </th>
-    </tr>
-    <tr>
-    <th>Talla:</th>
-    <th>
-    <select class="input" name="valTalla" id="talla">
-      <option value="Pequeño">Pequeño</option>
-      <option value="Mediano">Mediano</option>      
-      <option value="Grande">Grande</option>
-    </select>
-    </th>
-    </tr>
-    <tr>
-    <th>Edad:</th>
-    <th>
-    <input name="valEdad" class="input" type="number" id="edad" placeholder="Edad"/>
-    </th>
-    </tr>
-    <tr>
-    <th>Color:</th>
-    <th><input name="valColor" class="input" type="text" id="color" placeholder="Color" /></th>
-    </tr>
-    <tr>
-    <th>Sexo</th>
-    <th>
-    <select name="valSexo" class="input" id="sexo">
-    <option value="Hembra">Hembra</option>
-    <option value="Macho">Macho</option>
-    </select>
-    </th>
-    </tr>
-    <tr>
-      <th>Esterilizado</th>
-      <th>
-      <select name="valEst" class="input" id="esterilizado">
-      <option value="Sí">Sí</option>
-      <option value="No">No</option>
-      </select>
+      <input name="valTel" class="input" type="number" id="edad" placeholder="Telefono"/>
       </th>
       </tr>
+      <tr>
+        <th>Tipo de donacion:</th>
+        <th>
+        <select class="input" name="valDon" id="talla">
+          <option value="Alimento en especies">Alimento en especies</option>
+          <option value="Dinero en efectivo">Dinero en efectivo</option>      
+          <option value="Accesorios">Accesorios</option>
+        </select>
+        </th>
+        </tr>
     <tr>
-    <th>Fotografia</th>
-    <th>
-    <label for="upload-photo">
-    <input name="valFoto" type="file" id="upload-photo" accept="image/*"/>
-    <span name="valFoto2" class="input" id="imagen">Examinar</span>
-    </label>
-    </th>
+      <th>Descripcion de la donacion:</th>
+      <th>
+        <textarea id="valDes" name="valDes" rows="3" placeholder="Descripcion de la donacion" maxlength="500"></textarea>
+      </th>
     </tr>
     </thead>
     <tbody>
@@ -84,7 +50,7 @@
 </form>
 <form>
 
-  <button type="button" id="button-add-new" onclick="addMascota()">Agregar</button>
+  <button type="button" id="button-add-new" onclick="addDonacion()">Registrar</button>
 </form>
 </div>
 </div>
@@ -101,17 +67,17 @@
 <div class="header-icon"></div>
 <h1>ADMINISTRADOR</h1>
 </div>
-<button>Mascotas</button>
+<button onclick="window.location.href = 'admin.html'">Mascotas</button>
 <div class="submenu"><a>Catálogo de mascotas</a>
 <button onclick="window.location.href = 'Catalogo_dogs.html'">Catálogo de perros</button>
 <button onclick="window.location.href = 'Catalogo_cats.html'">Catálogo de gatos</button>
 </div>
 <button onclick="window.location.href = 'solicitudesAdopcion.html'">Solicitudes de adopción</button>
-<button onclick="window.location.href = 'donaciones.html'">Donaciones</button>
+<button>Donaciones</button>
 </nav>
 <div class="content-right">
   <div id="image-right"></div>
-  <button id="button-add" onclick="showDialog()" type="button">Anadir mascota</button>
+  <button id="button-add" onclick="showDialog()" type="button">Anadir Donacion</button>
   <button id="button-back" onclick="window.location.href = 'index.html'" type="button">Volver</button>
 </div>
 </nav>
@@ -123,13 +89,10 @@
           <tr>
             <!-- <th>&nbsp;</th> -->
             <th>Nombre</th>
-            <th>Talla</th>
-            <th>Edad</th>
-            <th>Color</th>
-            <th>Sexo</th>
-            <th>Esteril</th>
-            <th>Imagen</th>
-            <th>Raza</th>
+            <th>Telefono</th>
+            <th>Tipo de donacion</th>
+            <th>Descripcion de la donacion</th>
+            <th>Fecha</th>
             <th>Eliminar</th>
           </tr>
       </thead>
@@ -141,7 +104,7 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/hello.all.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script src="js/admin.js"></script>
+<script src="js/donaciones.js"></script>
 <footer>
 </footer>
 </body>
