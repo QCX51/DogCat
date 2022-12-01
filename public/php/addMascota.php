@@ -2,14 +2,19 @@
 
 require("conexion.php");
 
-$nombre=$_POST['nombre'];
-$color=$_POST['color'];
-$sexo=$_POST['sexo'];
-$esterilizado=$_POST['esterilizado'];
-$talla=$_POST['talla'];
-$edad=$_POST['edad'];
-$raza=$_POST['raza'];
-$foto=$_POST['foto'];
+$nombre=$_POST['valNombre'];
+$color=$_POST['valColor'];
+$sexo=$_POST['valSexo'];
+$esterilizado=$_POST['valEst'];
+$talla=$_POST['valTalla'];
+$edad=$_POST['valEdad'];
+$raza=$_POST['valRaza'];
+$foto = $_FILES['valFoto'];
+
+$fotoNE = md5($foto['tmp_name']).".jpg";
+$rutaS = "images/mascotas/".$fotoNE;
+$rutaM = "../images/mascotas/".$fotoNE;
+move_uploaded_file($foto['tmp_name'],$rutaM);
 
 $addMascota ="INSERT INTO `mascotas` 
 (`nombre`, `color`, `sexo`, `esterilizado`, `talla`, `edad`, `raza`, `foto`) 
@@ -21,7 +26,7 @@ $mascotaRow=[
   'sexo'=>$sexo,
   'color'=>$color,
   'edad'=>$edad,
-  'foto'=>$foto,
+  'foto'=>$rutaS,
   'talla'=>$talla
 ];
 $mascotaQuery = $pcn->prepare($addMascota);
@@ -30,7 +35,6 @@ if($mascotaQuery->execute($mascotaRow)){
 }else{
   echo json_encode(array("response"=>'ERROR',"detail"=>$mascotaQuery->errorInfo()));
 }
-
 
 $conn->close();
 

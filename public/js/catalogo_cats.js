@@ -80,7 +80,7 @@ $(document).ready(function() {
                   <img src=${row1.foto} alt="">
                   <h2 class="nombre_mascota" >${row1.nombre}</h2>
                   <div class="buscador_category" style="text-align:center; margin:20px;">
-                  <button class="button_adopcion2" onclick="conocerMascota7(${row1.id});">CONOCER</button>
+                  <button class="button_adopcion2" onclick="conocerMascota7(${row1.id});">CONOCEME</button>
                   <button class="button_adopcion3" onclick="btnSolicitarAdopcion7(${row1.id});">ADOPTAME</button>
                   </div>
                   </div>
@@ -94,7 +94,7 @@ $(document).ready(function() {
                   <img src=${row1.foto} width="195" height="100" alt="">
                   <h2 class="nombre_mascota" >${row1.nombre}</h2>
                   <div class="buscador_category2" style="text-align:center;">
-                    <button class="button_adopcion2" onclick="conocerMascota7(${row1.id});">CONOCER</button>
+                    <button class="button_adopcion2" onclick="conocerMascota7(${row1.id});">CONOCEME</button>
                     <button class="button_adopcion3" onclick="btnSolicitarAdopcion7(${row1.id});">ADOPTAME</button>
                   </div>
                 </div>
