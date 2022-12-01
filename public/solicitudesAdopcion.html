@@ -21,7 +21,7 @@
 <div class="header-icon"></div>
 <h1>ADMINISTRADOR</h1>
 </div>
-<button>Perfil</button>
+<button onclick="window.location.href = 'admin.html'">Mascotas</button>
 <div class="submenu"><a>Catálogo de mascotas</a>
 <button onclick="window.location.href = 'Catalogo_dogs.html'">Catálogo de perros</button>
 <button onclick="window.location.href = 'Catalogo_cats.html'">Catálogo de gatos</button>
@@ -38,30 +38,28 @@
 <div class="container">
 <div class="table">
     <table>
-        <caption>Gestión de mascotas</caption>
+        <caption>Gestión de adopciones</caption>
         <thead>
           <tr>
             <!-- <th>&nbsp;</th> -->
-            <th>ID</th>
             <th>Nombre</th>
-            <th>Talla</th>
-            <th>Edad</th>
-            <th>Color</th>
-            <th>Sexo</th>
-            <th>Imagen</th>
-            <th>Raza</th>
-            <th>Descripcion</th>
-            <th>Razon</th>
-            <th>Acciones</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Razon de adopcion</th>
+            <th>¿En donde vivirá?</th>
+            <th>Mascota</th>
+            <th>Foto</th>
+            <th>Estatus</th>
           </tr>
       </thead>
       <tbody id="tab-body"></tbody>
     </table>
 </div>
 </div>
-<script type="module" src="js/backend.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/hello.all.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script src="js/solicitudesAdopcion.js"></script>
 <footer>
 </footer>
 </body>
