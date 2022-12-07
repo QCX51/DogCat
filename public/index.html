@@ -31,9 +31,9 @@
 <div id="form-container">
 <div id="form-content">
 <img width="100" src="./assets/Icono_user.webp"/>
-<input type="text" placeholder="USERNAME" id="">
-<input type="text" placeholder="PASSWORD" id="">
-<button type="button" id="btn-login">Login</button>
+<input type="text" placeholder="USERNAME" id="correo">
+<input type="text" placeholder="PASSWORD" id="password">
+<button type="button" id="btn-login" onclick="btnLog()" >Login</button>
 <div id="separator"></div>
 <button type="button" onclick="initOAuth('google')" id="btn-g-oauth"></button>
 </div>
@@ -41,7 +41,9 @@
 </div>
 </div>
 <!-- <script type="module" src="js/backend.js"></script>-->
+<script src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script src="js/index.js"></script>
 <footer>
 </footer>
 </body>
